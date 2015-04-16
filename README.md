@@ -1,2 +1,6 @@
 # Rabbit-Java
-Rabbit-Java
+
+Rabbit inJava
+
+## License
+MIT
