@@ -23,7 +23,7 @@ dependencies {
   compile 'org.slf4j:slf4j-api:1.7.12'
 
   // JSON
-  compile 'org.json:json:20141113'
+  compile 'org.json:json:20140107'
 
   // Declare the dependency for your favourite test framework you want to use in your tests.
   // TestNG is also supported by the Gradle Test task. Just change the

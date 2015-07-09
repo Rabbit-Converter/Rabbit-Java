@@ -1,4 +1,5 @@
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /*
@@ -8,8 +9,15 @@ import static org.junit.Assert.*;
  * @author yelinaung, @date 7/10/15 12:18 AM
  */
 public class RabbitTest {
-    @Test public void testSomeLibraryMethod() {
-        Rabbit classUnderTest = new Rabbit();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
-    }
+
+  private String zgString = "မဂၤလာပါ";
+  private String uniString = "မင်္ဂလာပါ";
+
+  @Test public void testUni2Zawgyi() {
+    assertEquals(zgString, Rabbit.uni2zg(uniString));
+  }
+
+  @Test public void testZawgyi2Uni() {
+    assertEquals(uniString, Rabbit.zg2uni(zgString));
+  }
 }
