@@ -31,6 +31,12 @@ import org.json.JSONObject;
  */
 public class Rabbit {
 
+  /**
+   * Convert Unicode texts to Zawgyi texts
+   *
+   * @param input Unicode input strings
+   * @return Converted Zawgyi strings
+   */
   public static String uni2zg(String input) {
 
     String rule =
@@ -39,6 +45,12 @@ public class Rabbit {
     return replaceWithRule(rule, input);
   }
 
+  /**
+   * Convert Zawgyi texts to Unicode texts
+   *
+   * @param input Zawgyi input strings
+   * @return Converted Unicode strings
+   */
   public static String zg2uni(String input) {
 
     String rule =
@@ -47,7 +59,7 @@ public class Rabbit {
     return replaceWithRule(rule, input);
   }
 
-  public static String replaceWithRule(String rule, String output) {
+  private static String replaceWithRule(String rule, String output) {
 
     try {
       JSONArray rule_array = new JSONArray(rule);
