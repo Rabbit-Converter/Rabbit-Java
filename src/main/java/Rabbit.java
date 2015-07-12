@@ -27,7 +27,7 @@ import org.json.JSONObject;
 /**
  * Created by @saturngod on 23/1/15.
  *
- * Ported as a gradle library by @yelinaung on 10/07/15.
+ * Ported as a JAVA/Gradle library by @yelinaung on 10/07/15.
  */
 public class Rabbit {
 

@@ -29,7 +29,7 @@ public class RabbitTest {
     return null;
   }
 
-  @Test public void testUni2Zawgyi() {
+  @Test public void testUni2Zg() {
     JSONObject jsonObj = readJsonFromFile();
     if (jsonObj != null) {
       JSONArray zgArray = jsonObj.getJSONArray(ZG);
@@ -39,7 +39,7 @@ public class RabbitTest {
     }
   }
 
-  @Test public void testZawgyi2Uni() {
+  @Test public void testZg() {
     JSONObject jsonObj = readJsonFromFile();
     if (jsonObj != null) {
       JSONArray uniArray = jsonObj.getJSONArray(UNI);
