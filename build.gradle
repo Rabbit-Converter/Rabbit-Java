@@ -7,6 +7,18 @@
  * user guide available at http://gradle.org/docs/2.4/userguide/tutorial_java_projects.html
  */
 
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.2.3'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+    classpath 'com.github.dcendents:android-maven-plugin:1.2'
+  }
+}
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
@@ -16,6 +28,8 @@ repositories {
   // You can declare any Maven/Ivy/file repository here.
   jcenter()
 }
+
+dependencies {}
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
@@ -30,4 +44,28 @@ dependencies {
   // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
   // 'test.useTestNG()' to your build script.
   testCompile 'junit:junit:4.12'
+}
+
+ext {
+  bintrayRepo = 'maven'
+  bintrayName = 'rabbit'
+
+  publishedGroupId = 'org.rabbit-coverter.rabbit'
+  libraryName = 'Rabbit'
+  artifact = 'rabbit'
+
+  libraryDescription = 'Rabbit inJava'
+
+  siteUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java'
+  gitUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java.git'
+
+  libraryVersion = '0.0.1'
+
+  developerId = 'yelinaung'
+  developerName = 'Ye Lin Aung'
+  developerEmail = 'me@yeinaung.com'
+
+  licenseName = 'The MIT License (MIT)'
+  licenseUrl = 'http://opensource.org/licenses/MIT'
+  allLicenses = ["MIT"]
 }
