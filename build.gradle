@@ -54,7 +54,7 @@ ext {
   libraryName = 'Rabbit'
   artifact = 'rabbit'
 
-  libraryDescription = 'Rabbit inJava'
+  libraryDescription = 'Rabbit in Java'
 
   siteUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java'
   gitUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java.git'
