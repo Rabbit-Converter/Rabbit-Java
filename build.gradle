@@ -7,29 +7,28 @@
  * user guide available at http://gradle.org/docs/2.4/userguide/tutorial_java_projects.html
  */
 
-
 buildscript {
   repositories {
     jcenter()
   }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:1.2.3'
-    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-    classpath 'com.github.dcendents:android-maven-plugin:1.2'
+}
+
+plugins {
+  id "com.jfrog.bintray" version "1.2"
+}
+
+allprojects {
+
+  repositories {
+    jcenter()
   }
+  apply plugin: 'maven'
+  apply plugin: 'maven-publish'
+  apply plugin: 'java'
 }
 
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-
-// In this section you declare where to find the dependencies of your project
-repositories {
-  // Use 'jcenter' for resolving your dependencies.
-  // You can declare any Maven/Ivy/file repository here.
-  jcenter()
-}
-
-dependencies {}
+group = 'org.rabbit-converter.Rabbit'
+version = '0.0.1'
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
@@ -39,33 +38,75 @@ dependencies {
   // JSON
   compile 'org.json:json:20140107'
 
-  // Declare the dependency for your favourite test framework you want to use in your tests.
-  // TestNG is also supported by the Gradle Test task. Just change the
-  // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
-  // 'test.useTestNG()' to your build script.
   testCompile 'junit:junit:4.12'
 }
 
-ext {
-  bintrayRepo = 'maven'
-  bintrayName = 'rabbit'
+task sourcesJar(type: Jar, dependsOn: classes) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
 
-  publishedGroupId = 'org.rabbit-coverter.rabbit'
-  libraryName = 'Rabbit'
-  artifact = 'rabbit'
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = 'javadoc'
+  from javadoc.destinationDir
+}
 
-  libraryDescription = 'Rabbit in Java'
+jar {
+  from sourceSets.main.allSource
+}
 
-  siteUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java'
-  gitUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java.git'
+artifacts {
+  archives sourcesJar
+  archives javadocJar
+}
 
-  libraryVersion = '0.0.1'
+publishing {
+  publications {
+    MyPublication(MavenPublication) {
+      from components.java
+      groupId 'org.rabbit-converter'
+      artifactId 'Rabbit'
+      version project.version
+    }
+  }
+}
 
-  developerId = 'yelinaung'
-  developerName = 'Ye Lin Aung'
-  developerEmail = 'me@yeinaung.com'
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-  licenseName = 'The MIT License (MIT)'
-  licenseUrl = 'http://opensource.org/licenses/MIT'
-  allLicenses = ["MIT"]
+bintray {
+  user = properties.getProperty("bintray.user")
+  key = properties.getProperty("bintray.apikey")
+  publications = ['MyPublication']
+  dryRun = false
+  publish = true
+  pkg {
+    repo = 'maven'
+    name = 'rabbit'
+    desc = 'Rabbit in Java'
+    websiteUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java'
+    issueTrackerUrl = 'https://github.com/Rabbit-Converter/Rabbit/issues'
+    vcsUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java.git'
+    licenses = ['MIT']
+    labels = ['java', 'myanmar', 'font-converter', 'zawgyi', 'unicode']
+    publicDownloadNumbers = true
+    //Optional version descriptor
+    version {
+      name = project.version
+      desc = 'optional, version-specific description'
+      released = new Date()
+      mavenCentralSync {
+        sync = false
+        //Optional (true by default). Determines whether to sync the version to Maven Central.
+        user = 'userToken' //OSS user token
+        password = 'paasword' //OSS user password
+        close = '1'
+        //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
+      }
+    }
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
 }
