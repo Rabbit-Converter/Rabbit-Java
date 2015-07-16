@@ -25,12 +25,17 @@ allprojects {
   apply plugin: 'maven'
   apply plugin: 'maven-publish'
   apply plugin: 'java'
+
+  tasks.withType(JavaCompile) {
+    sourceCompatibility = "1.7"
+    targetCompatibility = "1.7"
+  }
 }
 
 def siteUrl = 'https://github.com/Rabbit-Converter/rabbit-Java'
 def gitUrl = 'https://github.com/Rabbit-Converter/rabbit-Java.git'
 group = 'org.rabbit-converter.rabbit'
-version = '0.0.2'
+version = '0.0.3'
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
