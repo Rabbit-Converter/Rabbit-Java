@@ -23,17 +23,20 @@ compile('org.rabbit-converter.rabbit:rabbit:0.0.3') {
 }
 ```
 
+or Maven
+
+<dependency>
+    <groupId>org.rabbit-converter.rabbit</groupId>
+    <artifactId>rabbit</artifactId>
+    <version>0.0.3</version>
+</dependency>
+
 ## Usage
 
 ```java
 Rabbit.zg2uni("သီဟိုဠ္မွ ဉာဏ္ႀကီးရွင္သည္ အာယုဝဍ္ဎနေဆးၫႊန္းစာကို ဇလြန္ေဈးေဘးဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္ ဂဃနဏဖတ္ခဲ့သည္။");  // return strings in uni
 Rabbit.uni2zg("သီဟိုဠ်မှ ဉာဏ်ကြီးရှင်သည် အာယုဝဍ်ဎနဆေးညွှန်းစာကို ဇလွန်ဈေးဘေးဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက် ဂဃနဏဖတ်ခဲ့သည်။");     // return strings in zg 
 ```
-
-
-## TODO
-
-- Sync to MavenCentral
 
 ## Contributing
 
