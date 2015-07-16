@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2015 Rabbit Converter
+package org.rabbitconverter.rabbit;/*
+ * Copyright (c) 2015 org.rabbitconverter.rabbit.Rabbit Converter
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ import org.json.JSONObject;
  *
  * Ported as a JAVA/Gradle library by @yelinaung on 10/07/15.
  */
-public class Rabbit {
+public final class Rabbit {
 
   /**
    * Convert Unicode texts to Zawgyi texts

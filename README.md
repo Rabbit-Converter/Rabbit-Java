@@ -6,7 +6,7 @@ Rabbit inJava
 
 ## Download
 
-Download the [jar](https://dl.bintray.com/yelinaung/maven/org/rabbit-converter/Rabbit/0.0.1/) or via Gradle
+Download the [jar](http://jcenter.bintray.com/org/rabbit-converter/rabbit/rabbit/0.0.2/) or via Gradle
 
 
 ```groovy
