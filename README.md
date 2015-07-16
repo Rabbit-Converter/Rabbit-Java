@@ -1,8 +1,6 @@
 # Rabbit-Java
 
-[![Build Status](https://travis-ci.org/Rabbit-Converter/Rabbit-Java.svg?branch=master)](https://travis-ci.org/Rabbit-Converter/Rabbit-Java)
-
-[ ![Download](https://api.bintray.com/packages/yelinaung/maven/rabbit/images/download.svg) ](https://bintray.com/yelinaung/maven/rabbit/_latestVersion)
+[![Build Status](https://travis-ci.org/Rabbit-Converter/Rabbit-Java.svg?branch=master)](https://travis-ci.org/Rabbit-Converter/Rabbit-Java) [ ![Download](https://api.bintray.com/packages/yelinaung/maven/rabbit/images/download.svg) ](https://bintray.com/yelinaung/maven/rabbit/_latestVersion)
 
 Rabbit inJava
 
