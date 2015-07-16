@@ -25,11 +25,13 @@ compile('org.rabbit-converter.rabbit:rabbit:0.0.3') {
 
 or Maven
 
+```xml
 <dependency>
     <groupId>org.rabbit-converter.rabbit</groupId>
     <artifactId>rabbit</artifactId>
     <version>0.0.3</version>
 </dependency>
+```
 
 ## Usage
 
