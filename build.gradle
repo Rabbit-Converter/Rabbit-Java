@@ -25,15 +25,10 @@ allprojects {
   apply plugin: 'maven'
   apply plugin: 'maven-publish'
   apply plugin: 'java'
-
-  sourceCompatibility = 1.7
-  targetCompatibility = 1.7
 }
 
-
-
-def siteUrl = 'https://github.com/rabbit-Converter/rabbit-Java'
-def gitUrl = 'https://github.com/rabbit-Converter/rabbit-Java.git'
+def siteUrl = 'https://github.com/Rabbit-Converter/rabbit-Java'
+def gitUrl = 'https://github.com/Rabbit-Converter/rabbit-Java.git'
 group = 'org.rabbit-converter.rabbit'
 version = '0.0.2'
 
