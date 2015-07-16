@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.rabbitconverter.rabbit.RabbitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-07-16T16:23:28" hostname="yla" time="0.057">
+  <properties/>
+  <testcase name="testZg" classname="org.rabbitconverter.rabbit.RabbitTest" time="0.046"/>
+  <testcase name="testUni2Zg" classname="org.rabbitconverter.rabbit.RabbitTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,6 @@
+-classpath '/Users/yelinaung/work/myanmar/Rabbit-Java/build/classes/main:/Users/yelinaung/work/myanmar/Rabbit-Java/build/resources/main:/Users/yelinaung/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar:/Users/yelinaung/.gradle/caches/modules-2/files-2.1/org.json/json/20140107/d1ffca6e2482b002702c6a576166fd685e3370e3/json-20140107.jar'
+-d '/Users/yelinaung/work/myanmar/Rabbit-Java/build/docs/javadoc'
+-doctitle 'rabbit 0.0.3 API'
+-quiet 
+-windowtitle 'rabbit 0.0.3 API'
+'/Users/yelinaung/work/myanmar/Rabbit-Java/src/main/java/org/rabbitconverter/rabbit/Rabbit.java'
