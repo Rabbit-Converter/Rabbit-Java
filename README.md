@@ -2,11 +2,28 @@
 
 [![Build Status](https://travis-ci.org/Rabbit-Converter/Rabbit-Java.svg?branch=master)](https://travis-ci.org/Rabbit-Converter/Rabbit-Java)
 
+[ ![Download](https://api.bintray.com/packages/yelinaung/maven/rabbit/images/download.svg) ](https://bintray.com/yelinaung/maven/rabbit/_latestVersion)
+
 Rabbit inJava
 
 ## Download
 
-Download the [jar](http://jcenter.bintray.com/org/rabbit-converter/rabbit/rabbit/0.0.2/) or via Gradle
+Download the [jar](http://jcenter.bintray.com/org/rabbit-converter/rabbit/rabbit/0.0.3/) or via Gradle
+
+```groovy
+
+// You can put it in your top-level build.gradle
+// Or you might already be using jcenter
+buildscript {
+  repositories {
+    jcenter()
+  }
+}
+
+compile('org.rabbit-converter.rabbit:rabbit:0.0.3') {
+  exclude group: 'org.json', module: 'json'
+}
+```
 
 ## Usage
 
