@@ -26,3 +26,6 @@ build/
 
 gradle.properties
 local.properties
+
+# release folder
+/release

@@ -27,8 +27,11 @@ allprojects {
   apply plugin: 'java'
 }
 
-group = 'org.rabbit-converter.Rabbit'
-version = '0.0.1'
+
+def siteUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java'
+def gitUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java.git'
+group = 'org.rabbit-converter.rabbit'
+version = '0.0.2'
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
@@ -56,16 +59,16 @@ jar {
 }
 
 artifacts {
-  archives sourcesJar
   archives javadocJar
+  archives sourcesJar
 }
 
 publishing {
   publications {
     MyPublication(MavenPublication) {
       from components.java
-      groupId 'org.rabbit-converter'
-      artifactId 'Rabbit'
+      groupId 'org.rabbit-converter.rabbit'
+      artifactId 'rabbit'
       version project.version
     }
   }
@@ -82,9 +85,9 @@ bintray {
     repo = 'maven'
     name = 'rabbit'
     desc = 'Rabbit in Java'
-    websiteUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java'
+    websiteUrl = siteUrl
     issueTrackerUrl = 'https://github.com/Rabbit-Converter/Rabbit/issues'
-    vcsUrl = 'https://github.com/Rabbit-Converter/Rabbit-Java.git'
+    vcsUrl = gitUrl
     licenses = ['MIT']
     labels = ['java', 'myanmar', 'font-converter', 'zawgyi', 'unicode']
     publicDownloadNumbers = true
@@ -93,6 +96,11 @@ bintray {
       name = project.version
       desc = 'optional, version-specific description'
       released = new Date()
+      gpg {
+        sign = true //Determines whether to GPG sign the files. The default is false
+        passphrase = System.getenv('BINTRAY_GPG_PASSWORD')
+        //Optional. The passphrase for GPG signing'
+      }
       mavenCentralSync {
         sync = false
         //Optional (true by default). Determines whether to sync the version to Maven Central.
@@ -100,6 +108,42 @@ bintray {
         password = 'paasword' //OSS user password
         close = '1'
         //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
+      }
+    }
+  }
+}
+
+install {
+  repositories.mavenInstaller {
+    // This generates POM.xml with proper parameters
+    pom {
+      project {
+        packaging 'jar'
+
+        // Add your description here
+        name 'rabbit'
+        description = 'Rabbit in Java'
+        url siteUrl
+
+        // Set your license
+        licenses {
+          license {
+            name 'MIT'
+            url 'http://opensource.org/licenses/MIT'
+          }
+        }
+        developers {
+          developer {
+            id 'yelinaung'
+            name 'Ye Lin Aung'
+            email 'me@yelinaung.com'
+          }
+        }
+        scm {
+          connection gitUrl
+          developerConnection gitUrl
+          url siteUrl
+        }
       }
     }
   }
