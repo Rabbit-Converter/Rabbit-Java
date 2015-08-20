@@ -35,7 +35,7 @@ or Maven
 
 ## Usage
 
-[Javadoc](rabbit-converter.github.io/Rabbit-Java)
+[Javadoc](http://www.rabbit-converter.org/Rabbit-Java)
 
 ```java
 Rabbit.zg2uni("သီဟိုဠ္မွ ဉာဏ္ႀကီးရွင္သည္ အာယုဝဍ္ဎနေဆးၫႊန္းစာကို ဇလြန္ေဈးေဘးဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္ ဂဃနဏဖတ္ခဲ့သည္။");  // return strings in uni
