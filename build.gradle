@@ -25,11 +25,7 @@ allprojects {
   apply plugin: 'maven'
   apply plugin: 'maven-publish'
   apply plugin: 'java'
-
-  tasks.withType(JavaCompile) {
-    sourceCompatibility = "1.7"
-    targetCompatibility = "1.7"
-  }
+  
 }
 
 def siteUrl = 'https://github.com/Rabbit-Converter/rabbit-Java'
