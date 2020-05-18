@@ -18,7 +18,7 @@ buildscript {
   }
 }
 
-compile('org.rabbit-converter.rabbit:rabbit:0.0.3') {
+implementation('org.rabbit-converter.rabbit:rabbit:0.0.3') {
   exclude group: 'org.json', module: 'json'
 }
 ```
